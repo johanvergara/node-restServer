@@ -65,7 +65,7 @@ const deleteUser = async(req, res = response) => {
     // Borrar por estado
     const user = await User.findByIdAndUpdate( id, { state: false });
 
-    res.json(user);
+    res.json( user );
 }
 
 const patchUsers = (req, res = response) => {
