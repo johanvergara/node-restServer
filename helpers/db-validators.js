@@ -31,9 +31,20 @@ const isCategoryIdValid = async ( id, name ) => {
     }
 }
 
+// Validar colecciones permitidas
+const allowedCollections = ( colection = '', colections = []) => {
+
+    const including = colections.includes( colection );
+    if ( !including ) {
+        throw new Error(`La coleccion ${ colection} no es permitida, ${ colections }`);
+    }
+    return true;
+}
+
 module.exports = {
     isRoleValid,
     isEmailValid,
     isUserIdValid,
-    isCategoryIdValid
+    isCategoryIdValid,
+    allowedCollections
 }

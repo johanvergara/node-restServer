@@ -31,7 +31,8 @@ const ProductSchema = Schema({
         type: Schema.Types.ObjectId,
         ref: 'Category',
         require: true
-    }
+    },
+    img: { type: String },
 });
 
 // Funcion para remover campos a la hora de enviar la data
